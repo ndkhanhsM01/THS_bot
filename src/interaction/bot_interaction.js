@@ -1,3 +1,5 @@
+const {request} = require("undici");
+
 
 module.exports = {
     reply : (interaction, command) => rep(interaction, command),
@@ -11,6 +13,7 @@ function rep(interaction, command){
             break;
         case "showme":
             showme(interaction);
+            //firstRequest(interaction);
             break;
         default:
             console.log(`"${command}" command not found`);
@@ -22,6 +25,19 @@ function hey(interaction){
     interaction.reply("hey boy");
 }
 
-function showme(interaction){
-    console.log(interaction.content);
+async function showme(interaction){
+    
+    const res = await request('https://api.publicapis.org/entries');
+    const { count } = await res.body.json();
+    console.log(`log ${count}`);
+    interaction.reply(`Has ${count}`);
+}
+
+async function firstRequest(interaction){
+    //await interaction.deferReply();
+
+    const catResult = await request('https://api.publicapis.org/entries');
+    const { count } = await catResult.body.json();
+    console.log(`log ${count}`);
+    interaction.reply(`Has ${count}`);
 }
