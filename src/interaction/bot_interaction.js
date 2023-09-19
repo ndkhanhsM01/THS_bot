@@ -26,11 +26,15 @@ function hey(interaction){
 }
 
 async function showme(interaction){
-    
-    const res = await request('https://api.publicapis.org/entries');
-    const { count } = await res.body.json();
-    console.log(`log ${count}`);
-    interaction.reply(`Has ${count}`);
+    // const res = await request('https://api.publicapis.org/entries');
+    // const { count } = await res.body.json();
+    // console.log(`log ${count}`);
+    // interaction.reply(`Has ${count}`);
+
+    const sensor_id = interaction.options.get("sensor_id")?.value;
+    const typeRequire = interaction.options.get("value_require")?.value;
+
+    interaction.reply(`you require ${typeRequire} from sensor has id: ${sensor_id}`);
 }
 
 async function firstRequest(interaction){

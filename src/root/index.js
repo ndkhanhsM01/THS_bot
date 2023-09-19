@@ -22,16 +22,16 @@ app.listen("3000", () => {
 });
 
 // bot call back
-client.on("ready", () => {
-    console.log("Im ready !!");
+client.on(Discord.Events.ClientReady, (bot) => {
+    //bot.send("Im ready");
 })
 
-client.on("messageCreate", (msg) => {
+client.on(Discord.Events.MessageCreate, (msg) => {
     if (msg.content === "ping")
         msg.reply("Im here!!");
 });
 
-client.on("interactionCreate", (interaction) => {
+client.on(Discord.Events.InteractionCreate, (interaction) => {
     if (!interaction.isChatInputCommand()) return;
     var commandName = interaction.commandName;
 
