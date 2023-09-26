@@ -24,6 +24,7 @@ const commands = [
     {
         name: "showme",
         description: "get the tempurature and the humidity of the sensor",
+        emoji: "🔭",
         options:[
             {
                 name: "value_require",
@@ -39,7 +40,7 @@ const commands = [
             {
                 name: "sensor_id",
                 description: "type your sensor's ID",
-                type: ApplicationCommandOptionType.Number,
+                type: ApplicationCommandOptionType.String,
                 required: true,
             }
         ]
