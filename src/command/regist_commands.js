@@ -40,7 +40,7 @@ const commands = [
             {
                 name: "sensor_id",
                 description: "type your sensor's ID",
-                type: ApplicationCommandOptionType.String,
+                type: ApplicationCommandOptionType.Number,
                 required: true,
             }
         ]
