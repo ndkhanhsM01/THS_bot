@@ -46,13 +46,13 @@ async function showme(interaction){
             //var result = info.title;
             switch(typeRequire){
                 case "BOTH":
-                    result = `🌥️ Sensor(${sensor_id}): [🌡️temperature: ${THS_Value.value}] & [💧humidity: ${THS_Value.humidity}]`;
+                    result = `🌥️ Sensor(${sensor_id}): [🌡️temperature: ${THS_Value.value}°C] & [💧humidity: ${THS_Value.humidity}%]`;
                     break;
                 case "TEMPURATURE":
-                    result = `🌡️ Sensor(${sensor_id}): Temperature is ${THS_Value.value}`;
+                    result = `🌡️ Sensor(${sensor_id}): Temperature is ${THS_Value.value}°C`;
                     break;
                 case "HUMIDITY":
-                    result = `💧 Sensor(${sensor_id}) Humidity is ${THS_Value.humidity}`;
+                    result = `💧 Sensor(${sensor_id}) Humidity is ${THS_Value.humidity}%`;
                     break;
             }
         }
